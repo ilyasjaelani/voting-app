@@ -91,7 +91,7 @@ spec:
     spec:
       containers:
       - name: vote
-        image: dockersamples/example-voting-app-vote:before-architecture-update
+        image: dockersamples/example-voting-app-vote:main
         ports:
         - containerPort: 80
 ---
@@ -127,7 +127,7 @@ spec:
     spec:
       containers:
       - name: worker
-        image: dockersamples/example-voting-app-worker:before-architecture-update
+        image: dockersamples/example-voting-app-vote:main
 ---
 # 5. RESULT APP (Frontend Node.js Analytics)
 apiVersion: apps/v1
@@ -148,7 +148,7 @@ spec:
     spec:
       containers:
       - name: result
-        image: dockersamples/example-voting-app-result:before-architecture-update
+        image: dockersamples/example-voting-app-result:main
         ports:
         - containerPort: 80
 ---
